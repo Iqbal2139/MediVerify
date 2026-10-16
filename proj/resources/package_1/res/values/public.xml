@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<resources package="com.mediverify.app" id="0x7f">
+  <public id="0x7f010000" type="drawable" name="ic_launcher" />
+  <public id="0x7f010001" type="drawable" name="ic_stat_pill" />
+  <public id="0x7f020000" type="string" name="app_name" />
+</resources>

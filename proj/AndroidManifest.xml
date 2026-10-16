@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<manifest android:versionCode="20" android:versionName="2.0.0" android:compileSdkVersion="34" android:compileSdkVersionCodename="14" package="com.mediverify.app" platformBuildVersionCode="34" platformBuildVersionName="14" xmlns:android="http://schemas.android.com/apk/res/android">
+  <uses-sdk android:minSdkVersion="26" android:targetSdkVersion="34" />
+  <uses-feature android:name="android.hardware.camera.any" android:required="false" />
+  <uses-feature android:name="android.hardware.camera.front" android:required="false" />
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+  <uses-permission android:name="android.permission.VIBRATE" />
+  <uses-permission android:name="android.permission.WAKE_LOCK" />
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+  <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" android:maxSdkVersion="32" />
+  <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+  <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+  <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+  <application android:name="com.mediverify.app.App" android:label="@string/app_name" android:icon="@drawable/ic_launcher" android:roundIcon="@drawable/ic_launcher" android:theme="@android:style/Theme.Material.Light.NoActionBar" android:allowBackup="false" android:supportsRtl="true">
+    <activity android:name="com.mediverify.app.MainActivity" android:exported="true" android:launchMode="singleTop" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:name="com.mediverify.app.VerifyActivity" android:exported="false" android:screenOrientation="portrait" android:configChanges="keyboardHidden|screenSize|screenLayout|smallestScreenSize" />
+    <activity android:name="com.mediverify.app.MedEditActivity" android:exported="false" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize" />
+    <activity android:name="com.mediverify.app.LogDetailActivity" android:exported="false" android:screenOrientation="portrait" />
+    <activity android:name="com.mediverify.app.reminder.AlarmActivity" android:exported="false" android:screenOrientation="portrait" android:showWhenLocked="true" android:turnScreenOn="true" android:excludeFromRecents="true" android:launchMode="singleTask" android:taskAffinity="com.mediverify.app.alarm" />
+    <receiver android:name="com.mediverify.app.reminder.AlarmReceiver" android:exported="false" />
+    <receiver android:name="com.mediverify.app.reminder.BootReceiver" android:exported="true">
+      <intent-filter>
+        <action android:name="android.intent.action.BOOT_COMPLETED" />
+        <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+        <action android:name="android.intent.action.TIME_SET" />
+        <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+      </intent-filter>
+    </receiver>
+    <provider android:name="com.mediverify.app.ExportProvider" android:authorities="com.mediverify.app.export" android:exported="false" android:grantUriPermissions="true" />
+  </application>
+</manifest>

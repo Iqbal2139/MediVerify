@@ -1,0 +1,29 @@
+# Build output
+bin/
+out/
+build/
+target/
+*.class
+
+# Android / Gradle
+.gradle/
+*.apk
+*.ap_
+*.aab
+*.dex
+local.properties
+captures/
+.externalNativeBuild
+.cxx
+
+# IDE & OS
+.idea/
+*.iml
+.vscode/
+*.ipr
+*.iws
+.DS_Store
+Thumbs.db
+*.bak
+*~
+*.swp
